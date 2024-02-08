@@ -37,7 +37,6 @@ public class User implements Serializable, UserDetails {
 	private String email;
 	private String password;
 	
-	private Integer attribute;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tb_user_role",
@@ -52,12 +51,12 @@ public class User implements Serializable, UserDetails {
 		
 	}
 
-	public User(Long id, String name, String email, String password, Integer attribute) {
+	public User(Long id, String name, String email, String password) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.attribute = attribute;
+		
 	}
 
 	public Long getId() {
@@ -92,13 +91,6 @@ public class User implements Serializable, UserDetails {
 		this.password = password;
 	}
 
-	public Integer getAttribute() {
-		return attribute;
-	}
-
-	public void setAttribute(Integer attribute) {
-		this.attribute = attribute;
-	}
 
 	public Set<Role> getRoles() {
 		return roles;
@@ -156,6 +148,15 @@ public class User implements Serializable, UserDetails {
 		return true;
 	}
 	
+	public boolean hasRole(String roleName) {
+		for (Role role : roles ) {
+			if(role.getAuthority().equals(roleName)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 	
 	
 

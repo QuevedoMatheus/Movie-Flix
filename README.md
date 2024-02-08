@@ -10,6 +10,7 @@ Ao selecionar um filme da listagem, é mostrada uma página de detalhes, onde é
 Um usuário possui nome, email e senha, sendo que o email é o seu nome de usuário. Cada filme possui um título, subtítulo, uma imagem, ano de lançamento, sinopse e um gênero. Os usuários membros podem registar avaliações para os filmes. Um mesmo usuário-membro pode deixar mais de uma avaliação para o mesmo filme.
 
 # Modelo Conceitual
+![modelo-conceitual](https://drive.google.com/file/d/1s9ElnIOWdMjTbzntggl6lzwdiDSAhwtH/view?usp=drive_link)
 
 # O que devo fazer para completar o desafio 
 
